@@ -1,0 +1,57 @@
+﻿@model IEnumerable<GeneticAlgorithms.Entity.DTOs.TimeSlotDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Розклад</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                День
+            </th>
+            <th>
+                Початок
+            </th>
+            <th>
+                Кінець
+            </th>
+            <th>
+                Аудиторія
+            </th>
+            <th>
+                Курс
+            </th>
+            <th>
+                Студенти
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.End)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Students)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
